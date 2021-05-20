@@ -1,0 +1,60 @@
+/*
+ *   Copyright © 2014-2021 PSPDFKit GmbH. All rights reserved.
+ *
+ *   The PSPDFKit Sample applications are licensed with a modified BSD license.
+ *   Please see License for details. This notice may not be removed from this file.
+ */
+
+apply plugin: 'com.android.application'
+
+// Include PSPDFKit library and version numbers.
+apply from: 'pspdfkit.gradle'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        applicationId "com.pspdfkit.instant.example"
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        // See 'pspdfkit.gradle' for version information.
+        versionCode PSPDFKIT_VERSION_CODE
+        versionName PSPDFKIT_VERSION
+
+        resValue "string", "PSPDFKIT_LICENSE_KEY", "\"LICENSE_KEY_GOES_HERE\""
+
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            zipAlignEnabled true
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    // Android Multidex support library
+    implementation "androidx.multidex:multidex:${MULTIDEX_LIBRARIES_VERSION}"
+
+    // Retrofit and Gson for web example REST API.
+    implementation "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
+    implementation "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}"
+    implementation "com.google.code.gson:gson:${GSON_VERSION}"
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "androidx.multidex:multidex-instrumentation:${MULTIDEX_LIBRARIES_VERSION}"
+    }
+}

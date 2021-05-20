@@ -1,0 +1,35 @@
+/*
+ *   Copyright © 2020-2021 PSPDFKit GmbH. All rights reserved.
+ *
+ *   The PSPDFKit Sample applications are licensed with a modified BSD license.
+ *   Please see License for details. This notice may not be removed from this file.
+ */
+
+apply plugin: 'com.android.library'
+
+// Include PSPDFKit library and version numbers.
+apply from: 'pspdfkit.gradle'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        multiDexEnabled true
+
+        buildConfigField "int", "VERSION_CODE", "$PSPDFKIT_VERSION_CODE"
+        buildConfigField "String", "VERSION_NAME", "\"PSPDFKIT_VERSION\""
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // MainActivity status bar tinting
+    implementation "com.readystatesoftware.systembartint:systembartint:${SYSTEM_BAR_TINT_VERSION}"
+}

@@ -1,0 +1,8 @@
+repositories {
+    google()
+}
+
+dependencies {
+    // Instant example depends on shared example module which provides the PSPDFKit and its dependencies.
+    implementation project(':shared')
+}
