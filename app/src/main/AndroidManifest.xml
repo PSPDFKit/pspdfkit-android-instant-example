@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~   Copyright © 2014-2024 PSPDFKit GmbH. All rights reserved.
+  ~
+  ~   The PSPDFKit Sample applications are licensed with a modified BSD license.
+  ~   Please see License for details. This notice may not be removed from this file.
+  -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".PSPDFKitInstantExample"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/PSPDFCatalog.Theme.Light">
+
+        <meta-data
+            android:name="pspdfkit_license_key"
+            android:value="@string/PSPDFKIT_LICENSE_KEY"/>
+
+        <!--
+            Main catalog activity containing the list of examples and configuration drawer.
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:logo="@drawable/ic_logo_padded"
+            android:exported="true"
+            android:resizeableActivity="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!--
+            This is the main Instant activity.
+        -->
+        <activity
+            android:name="com.pspdfkit.instant.ui.InstantPdfActivity"
+            android:resizeableActivity="true"
+            android:windowSoftInputMode="adjustNothing"/>
+
+        <activity
+            android:name=".ui.InstantExampleActivity"
+            android:resizeableActivity="true"
+            android:windowSoftInputMode="adjustNothing"/>
+    </application>
+
+</manifest>
