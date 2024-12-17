@@ -23,7 +23,7 @@ public class InstantConnectionPreferences {
     private static final String PREF_USERNAME = "instant_example.username";
     private static final String PREF_LOGGED_IN = "instant_example.logged_in";
 
-    /** Returns Instant Server (PSPDFKit Document Engine) url for example server URL. */
+    /** Returns Instant Server (Nutrient Document Engine) url for example server URL. */
     @NonNull
     public static String getInstantServerUrlFromServerUrl(@NonNull final String serverUrl) {
         final HttpUrl serverUrlBase = HttpUrl.parse(serverUrl);
@@ -32,7 +32,7 @@ public class InstantConnectionPreferences {
                 : "";
     }
 
-    /** Returns Instant Server (PSPDFKit Document Engine) url. */
+    /** Returns Instant Server (Nutrient Document Engine) url. */
     @NonNull
     public static String getInstantServerUrl(@NonNull final Context context) {
         final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);

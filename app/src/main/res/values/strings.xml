@@ -6,7 +6,7 @@
   ~   Please see License for details. This notice may not be removed from this file.
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name">Instant</string>
 
     <string name="error_enter_valid_server_url">Enter valid server url</string>
@@ -18,7 +18,7 @@
     <string name="progress_connecting">Connecting…</string>
 
     <string name="error_old_client">An update for %s is required to access the document and sync annotations.</string>
-    <string name="error_old_server">An update for Instant Server (PSPDFKit Document Engine) is required to access the document and sync annotations.</string>
+    <string name="error_old_server">An update for Instant Server (Nutrient Document Engine) is required to access the document and sync annotations.</string>
 
     <string name="default_web_example_server_url">http://127.0.0.1:3000/</string>
     <string name="default_username">test</string>

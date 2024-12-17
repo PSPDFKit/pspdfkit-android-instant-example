@@ -1,6 +1,6 @@
-# PSPDFKit for Android - Instant example
+# Nutrient for Android - Instant example
 
-This is a small example app demonstrating [PSPDFKit for Android](https://pspdfkit.com/pdf-sdk/android/) and [PSPDFKit Instant](https://pspdfkit.com/instant/). This example is the Android client counterpart of https://github.com/PSPDFKit/pspdfkit-server-example-rails.
+This is a small example app demonstrating [Nutrient for Android](https://nutrient.io/pdf-sdk/android/) and [Nutrient Instant](https://nutrient.io/instant/). This example is the Android client counterpart of https://github.com/PSPDFKit/pspdfkit-server-example-rails.
 
 ## Prerequisites
 
@@ -27,9 +27,9 @@ This software is licensed under a [modified BSD license](LICENSE).
 
 ## Additional Resources
 
-* PSPDFKit Instant: https://pspdfkit.com/instant/
-* PSPDFKit for Android online guides: https://pspdfkit.com/guides/android/current/
-* PSPDFKit API reference:
-  * KDoc: https://pspdfkit.com/api/android/kdoc/
-  * Javadoc: https://pspdfkit.com/api/android/javadoc/
-* PSPDFKit technical customer support: https://pspdfkit.com/support/request/  
+* Nutrient Instant: https://nutrient.io/instant/
+* Nutrient for Android online guides: https://nutrient.io/guides/android/current/
+* Nutrient API reference:
+  * KDoc: https://nutrient.io/api/android/kdoc/
+  * Javadoc: https://nutrient.io/api/android/javadoc/
+* Nutrient technical customer support: https://nutrient.io/support/request/  
