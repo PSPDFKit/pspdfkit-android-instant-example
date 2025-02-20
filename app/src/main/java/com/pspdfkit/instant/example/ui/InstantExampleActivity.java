@@ -185,7 +185,7 @@ public class InstantExampleActivity extends InstantPdfActivity {
             isAuthenticating = true;
 
             // We will now query web example server for a new authentication token and
-            // re-authenticate with Instant Server (PSPDFKit Document Engine).
+            // re-authenticate with Instant Server (Nutrient Document Engine).
             webExampleClient
                     .getJwt(instantDocument.getInstantDocumentDescriptor().getDocumentId())
                     .flatMapCompletable(document::reauthenticateWithJwtAsync)
@@ -219,7 +219,7 @@ public class InstantExampleActivity extends InstantPdfActivity {
     public void onDocumentCorrupted(@NonNull final InstantPdfDocument instantDocument) {
         super.onDocumentCorrupted(instantDocument);
 
-        // PSPDFKit Instant detected corruption in document data. Document will get invalidated now.
+        // Nutrient Instant detected corruption in document data. Document will get invalidated now.
         // Remove local document storage so it can be re-downloaded when opened next time.
         instantDocument.removeLocalStorage();
     }
