@@ -18,8 +18,8 @@ android {
         minSdk = 21
         targetSdk = compileSdk
 
-        versionName = "2024.5.1"
-        versionCode = 140388
+        versionName = "2024.6.1"
+        versionCode = 140580
 
         resValue("string", "PSPDFKIT_LICENSE_KEY", "\"LICENSE_KEY_GOES_HERE\"")
     }
@@ -39,7 +39,7 @@ android {
 dependencies {
     // PSPDFKit is integrated from the PSPDFKit Maven repository. See the `repositories` block at the beginning
     // of this file, which shows how to set up the repository in your app.
-    implementation("com.pspdfkit:pspdfkit:2024.5.1")
+    implementation("com.pspdfkit:pspdfkit:2024.6.1")
 
     // Retrofit and Gson for web example REST API.
     implementation("com.google.code.gson:gson:2.10.1")
