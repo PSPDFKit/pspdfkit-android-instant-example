@@ -1,5 +1,5 @@
 /*
- *   Copyright © 2017-2024 PSPDFKit GmbH. All rights reserved.
+ *   Copyright © 2017-2025 PSPDFKit GmbH. All rights reserved.
  *
  *   The PSPDFKit Sample applications are licensed with a modified BSD license.
  *   Please see License for details. This notice may not be removed from this file.
@@ -25,7 +25,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import com.pspdfkit.PSPDFKit;
+import com.pspdfkit.Nutrient;
 import com.pspdfkit.configuration.activity.PdfActivityConfiguration;
 import com.pspdfkit.instant.example.R;
 import com.pspdfkit.instant.example.utils.Utils;
@@ -79,15 +79,15 @@ public class CatalogActivityWithSettings extends AppCompatActivity {
 
         final SpannableString abTitle;
         final String appLabel = getActivityLabel();
-        if (PSPDFKit.VERSION.startsWith("android-") && PSPDFKit.VERSION.length() > 8) {
+        if (Nutrient.VERSION.startsWith("android-") && Nutrient.VERSION.length() > 8) {
             // Tagged development builds have a slightly different format.
-            abTitle = new SpannableString(appLabel + " v" + PSPDFKit.VERSION.substring(8));
-        } else if (PSPDFKit.VERSION.contains("-")) {
+            abTitle = new SpannableString(appLabel + " v" + Nutrient.VERSION.substring(8));
+        } else if (Nutrient.VERSION.contains("-")) {
             // Nightly versions have longer version so shorten it.
-            String[] split = PSPDFKit.VERSION.split("-");
+            String[] split = Nutrient.VERSION.split("-");
             abTitle = new SpannableString(appLabel + " v" + split[0] + "-" + split[split.length - 1]);
         } else {
-            abTitle = new SpannableString(appLabel + " v" + PSPDFKit.VERSION);
+            abTitle = new SpannableString(appLabel + " v" + Nutrient.VERSION);
         }
 
         abTitle.setSpan(
@@ -128,7 +128,7 @@ public class CatalogActivityWithSettings extends AppCompatActivity {
 
     @NonNull
     private String getActivityLabel() {
-        String appName = "PSPDFKit";
+        String appName = "Nutrient";
         PackageManager packageManager = getPackageManager();
         try {
             appName = packageManager

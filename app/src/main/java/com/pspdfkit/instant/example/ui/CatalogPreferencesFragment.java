@@ -1,5 +1,5 @@
 /*
- *   Copyright © 2017-2024 PSPDFKit GmbH. All rights reserved.
+ *   Copyright © 2017-2025 PSPDFKit GmbH. All rights reserved.
  *
  *   The PSPDFKit Sample applications are licensed with a modified BSD license.
  *   Please see License for details. This notice may not be removed from this file.
@@ -23,7 +23,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
-import com.pspdfkit.PSPDFKit;
+import com.pspdfkit.Nutrient;
 import com.pspdfkit.configuration.PdfConfiguration;
 import com.pspdfkit.configuration.activity.PdfActivityConfiguration;
 import com.pspdfkit.configuration.activity.ThumbnailBarMode;
@@ -276,7 +276,7 @@ public class CatalogPreferencesFragment extends PreferenceFragmentCompat
         clearCacheBtn = findPreference(PREF_CLEAR_CACHE);
         if (clearCacheBtn != null) {
             clearCacheBtn.setOnPreferenceClickListener(preference -> {
-                PSPDFKit.clearCaches(requireActivity(), true);
+                Nutrient.clearCaches();
                 Toast.makeText(getActivity(), "Cache cleared.", Toast.LENGTH_SHORT)
                         .show();
                 return true;
@@ -341,7 +341,7 @@ public class CatalogPreferencesFragment extends PreferenceFragmentCompat
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String key) {
         if (PREF_ENABLE_FORM_EDITING.equals(key)) {
-            PSPDFKit.clearCaches(requireActivity(), true);
+            Nutrient.clearCaches();
         }
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~   Copyright © 2014-2024 PSPDFKit GmbH. All rights reserved.
+  ~   Copyright © 2014-2025 PSPDFKit GmbH. All rights reserved.
   ~
   ~   The PSPDFKit Sample applications are licensed with a modified BSD license.
   ~   Please see License for details. This notice may not be removed from this file.
@@ -17,22 +17,23 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".PSPDFKitInstantExample"
+        android:name=".NutrientInstantExample"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:theme="@style/PSPDFCatalog.Theme.Light">
 
         <meta-data
             android:name="pspdfkit_license_key"
-            android:value="@string/PSPDFKIT_LICENSE_KEY"/>
+            android:value="@string/NUTRIENT_LICENSE_KEY"/>
 
         <!--
             Main catalog activity containing the list of examples and configuration drawer.
         -->
         <activity
             android:name=".MainActivity"
-            android:logo="@drawable/ic_logo_padded"
+            android:logo="@drawable/ic_logo"
             android:exported="true"
             android:resizeableActivity="true">
             <intent-filter>
@@ -48,7 +49,7 @@
         <activity
             android:name="com.pspdfkit.instant.ui.InstantPdfActivity"
             android:resizeableActivity="true"
-            android:windowSoftInputMode="adjustNothing"/>
+            android:windowSoftInputMode="adjustNothing" />
 
         <activity
             android:name=".ui.InstantExampleActivity"

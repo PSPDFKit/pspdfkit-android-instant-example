@@ -60,7 +60,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;colorOnSecondary&quot;>@color/pspdf__color_black&lt;/item>"
         errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -71,7 +71,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__backgroundColor&quot;>@color/pspdf__color_black&lt;/item>"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -82,7 +82,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__borderColor&quot;>@color/pspdf__gray_70&lt;/item>"
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -93,7 +93,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_80` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_80` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__fontButtonsTintColor&quot;>@color/pspdf__gray_80&lt;/item>"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -104,7 +104,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_80` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_80` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__fontSmallButtonsTintColor&quot;>@color/pspdf__gray_80&lt;/item>"
         errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -115,7 +115,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__fontButtonsTintColorChecked&quot;>@color/pspdf__gray_70&lt;/item>"
         errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -126,7 +126,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__textColor&quot;>@color/pspdf__gray_20&lt;/item>"
         errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -137,7 +137,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__iconBorderColor&quot;>@color/pspdf__gray_20&lt;/item>"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -148,7 +148,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__iconsColor&quot;>@color/pspdf__gray_20&lt;/item>"
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -159,7 +159,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_signature_yellow` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_signature_yellow` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__itemRippleBackgroundColor&quot;>@color/pspdf__color_signature_yellow&lt;/item>"
         errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -170,7 +170,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__titleTextColor&quot;>@color/pspdf__gray_20&lt;/item>"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -181,7 +181,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__titleIconsColor&quot;>@color/pspdf__gray_20&lt;/item>"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -192,7 +192,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__blue_darkmode` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__blue_darkmode` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;colorPrimary&quot;>@color/pspdf__blue_darkmode&lt;/item>"
         errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -203,7 +203,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__blue_darkmode` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__blue_darkmode` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;colorAccent&quot;>@color/pspdf__blue_darkmode&lt;/item>"
         errorLine2="                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -214,7 +214,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;android:colorBackground&quot;>@color/pspdf__color_black&lt;/item>"
         errorLine2="                                             ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -225,7 +225,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__settings_unselected_color&quot;>@color/pspdf__gray_70&lt;/item>"
         errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -236,7 +236,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="    &lt;item android:color=&quot;@color/pspdf__color_black&quot; android:state_activated=&quot;true&quot; android:state_enabled=&quot;false&quot; />"
         errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -247,7 +247,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="    &lt;item android:color=&quot;@color/pspdf__gray_70&quot; android:state_activated=&quot;false&quot; android:state_enabled=&quot;false&quot; />"
         errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -258,7 +258,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="    &lt;item android:color=&quot;@color/pspdf__color_black&quot; android:state_activated=&quot;true&quot; />"
         errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -269,7 +269,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_white` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_white` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;colorOnSecondary&quot;>@color/pspdf__color_white&lt;/item>"
         errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
@@ -280,7 +280,7 @@
 
     <issue
         id="PrivateResource"
-        message="The resource `@color/pspdf__color_white` is marked as private in android:sdk-pspdfkit:unspecified"
+        message="The resource `@color/pspdf__color_white` is marked as private in android:sdk-nutrient:unspecified"
         errorLine1="        &lt;item name=&quot;pspdf__textColor&quot;>@color/pspdf__color_white&lt;/item>"
         errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location

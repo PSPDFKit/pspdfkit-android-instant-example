@@ -1,5 +1,5 @@
 <!--
-  ~   Copyright © 2017-2024 PSPDFKit GmbH. All rights reserved.
+  ~   Copyright © 2017-2025 PSPDFKit GmbH. All rights reserved.
   ~
   ~   The PSPDFKit Sample applications are licensed with a modified BSD license.
   ~   Please see License for details. This notice may not be removed from this file.
@@ -8,11 +8,9 @@
 <resources>
 
     <style name="PSPDFCatalog.Theme.Launcher" parent="Theme.MaterialComponents.Light">
-        <item name="colorPrimary">@color/splash_background</item>
-        <item name="colorPrimaryDark">@color/splash_dark</item>
-        <item name="colorAccent">@color/color_primary_dark</item>
-
-        <item name="android:windowBackground">@drawable/launch_screen</item>
+        <item name="colorPrimary">@color/ic_launcher_background</item>
+        <item name="colorPrimaryDark">@color/ic_launcher_background</item>
+        <item name="android:windowBackground">@drawable/ic_launcher_foreground</item>
     </style>
 
     <!--

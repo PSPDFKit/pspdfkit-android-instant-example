@@ -1,5 +1,5 @@
 /*
- *   Copyright © 2017-2024 PSPDFKit GmbH. All rights reserved.
+ *   Copyright © 2017-2025 PSPDFKit GmbH. All rights reserved.
  *
  *   The PSPDFKit Sample applications are licensed with a modified BSD license.
  *   Please see License for details. This notice may not be removed from this file.
@@ -11,9 +11,9 @@ import android.app.Application;
 import android.util.Log;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
 
-public class PSPDFKitInstantExample extends Application {
+public class NutrientInstantExample extends Application {
 
-    private static final String LOG_TAG = "PSPDFKitInstantExample";
+    private static final String LOG_TAG = "NutrientInstantExample";
 
     @Override
     public void onCreate() {
