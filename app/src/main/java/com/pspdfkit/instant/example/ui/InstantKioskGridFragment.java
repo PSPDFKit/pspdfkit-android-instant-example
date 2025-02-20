@@ -94,7 +94,7 @@ public class InstantKioskGridFragment extends Fragment {
             if (documentDescriptor == null) return;
 
             // Open the touched document.
-            final Intent intent = InstantPdfActivityIntentBuilder.fromInstantDocument(
+            final Intent intent = InstantPdfActivityIntentBuilder.Companion.fromInstantDocument(
                             getContext(), serverUrl, documentDescriptor.getDefaultLayer().jwt)
                     .activityClass(InstantExampleActivity.class)
                     .configuration(getConfiguration().build())

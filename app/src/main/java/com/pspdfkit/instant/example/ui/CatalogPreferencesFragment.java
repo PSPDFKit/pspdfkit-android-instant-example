@@ -33,6 +33,7 @@ import com.pspdfkit.configuration.page.PageFitMode;
 import com.pspdfkit.configuration.page.PageLayoutMode;
 import com.pspdfkit.configuration.page.PageScrollDirection;
 import com.pspdfkit.configuration.page.PageScrollMode;
+import com.pspdfkit.configuration.search.SearchType;
 import com.pspdfkit.configuration.sharing.ShareFeatures;
 import com.pspdfkit.configuration.theming.ThemeMode;
 import com.pspdfkit.instant.example.BuildConfig;
@@ -132,9 +133,8 @@ public class CatalogPreferencesFragment extends PreferenceFragmentCompat
         }
 
         final boolean restoreLastViewedPage = getBooleanValue(sharedPref, PREF_RESTORE_LAST_VIEWED_PAGE);
-        final int searchType = getBooleanValue(sharedPref, PREF_INLINE_SEARCH)
-                ? PdfActivityConfiguration.SEARCH_INLINE
-                : PdfActivityConfiguration.SEARCH_MODULAR;
+        final SearchType searchType =
+                getBooleanValue(sharedPref, PREF_INLINE_SEARCH) ? SearchType.INLINE : SearchType.MODULAR;
 
         final UserInterfaceViewMode userInterfaceViewMode = getUserInterfaceModeFromPreferenceString(
                 context, getStringValue(sharedPref, PREF_SYSTEM_USER_INTERFACE_MODE, userInterfaceViewModeDefault));
@@ -178,85 +178,28 @@ public class CatalogPreferencesFragment extends PreferenceFragmentCompat
             configuration.page(startPage);
         }
 
-        if (getBooleanValue(sharedPref, PREF_SHOW_SEARCH_ACTION)) {
-            configuration.enableSearch();
-        } else {
-            configuration.disableSearch();
-        }
-
+        configuration.searchEnabled(getBooleanValue(sharedPref, PREF_SHOW_SEARCH_ACTION));
         configuration.useImmersiveMode(getBooleanValue(sharedPref, PREF_IMMERSIVE_MODE));
-
-        if (getBooleanValue(sharedPref, PREF_SHOW_THUMBNAIL_GRID_ACTION)) {
-            configuration.showThumbnailGrid();
-        } else {
-            configuration.hideThumbnailGrid();
-        }
-
-        if (getBooleanValue(sharedPref, PREF_SHOW_OUTLINE_ACTION)) {
-            configuration.enableOutline();
-        } else {
-            configuration.disableOutline();
-        }
-
-        if (getBooleanValue(sharedPref, PREF_SHOW_ANNOTATION_LIST_ACTION)) {
-            configuration.enableAnnotationList();
-        } else {
-            configuration.disableAnnotationList();
-        }
-
-        if (getBooleanValue(sharedPref, PREF_SHOW_PAGE_NUMBER_OVERLAY)) {
-            configuration.showPageNumberOverlay();
-        } else {
-            configuration.hidePageNumberOverlay();
-        }
-
-        if (getBooleanValue(sharedPref, PREF_SHOW_PAGE_LABELS)) {
-            configuration.showPageLabels();
-        } else {
-            configuration.hidePageLabels();
-        }
-
+        configuration.thumbnailGridEnabled(getBooleanValue(sharedPref, PREF_SHOW_THUMBNAIL_GRID_ACTION));
+        configuration.outlineEnabled(getBooleanValue(sharedPref, PREF_SHOW_OUTLINE_ACTION));
+        configuration.annotationListEnabled(getBooleanValue(sharedPref, PREF_SHOW_ANNOTATION_LIST_ACTION));
+        configuration.pageNumberOverlayEnabled(getBooleanValue(sharedPref, PREF_SHOW_PAGE_NUMBER_OVERLAY));
+        configuration.pageLabelsEnabled(getBooleanValue(sharedPref, PREF_SHOW_PAGE_LABELS));
         configuration.toGrayscale(getBooleanValue(sharedPref, PREF_GRAYSCALE));
-
         configuration.invertColors(getBooleanValue(sharedPref, PREF_INVERT_COLORS) || themeMode == ThemeMode.NIGHT);
-
-        if (getBooleanValue(sharedPref, PREF_ENABLE_ANNOTATION_EDITING)) {
-            configuration.enableAnnotationEditing();
-        } else {
-            configuration.disableAnnotationEditing();
-        }
-
-        if (getBooleanValue(sharedPref, PREF_ENABLE_ANNOTATION_ROTATION)) {
-            configuration.enableAnnotationRotation();
-        } else {
-            configuration.disableAnnotationRotation();
-        }
-
-        if (getBooleanValue(sharedPref, PREF_ENABLE_FORM_EDITING)) {
-            configuration.enableFormEditing();
-        } else {
-            configuration.disableFormEditing();
-        }
-
+        configuration.annotationEditingEnabled(getBooleanValue(sharedPref, PREF_ENABLE_ANNOTATION_EDITING));
+        configuration.annotationRotationEnabled(getBooleanValue(sharedPref, PREF_ENABLE_ANNOTATION_ROTATION));
+        configuration.formEditingEnabled(getBooleanValue(sharedPref, PREF_ENABLE_FORM_EDITING));
         if (getBooleanValue(sharedPref, PREF_SHOW_SHARE_ACTION)) {
             configuration.setEnabledShareFeatures(ShareFeatures.all());
         } else {
             configuration.setEnabledShareFeatures(ShareFeatures.none());
         }
-
-        if (getBooleanValue(sharedPref, PREF_SHOW_PRINT_ACTION)) {
-            configuration.enablePrinting();
-        } else {
-            configuration.disablePrinting();
-        }
-
+        configuration.printingEnabled(getBooleanValue(sharedPref, PREF_SHOW_PRINT_ACTION));
         configuration.textSelectionEnabled(getBooleanValue(sharedPref, PREF_ENABLE_TEXT_SELECTION));
-
         configuration.setVolumeButtonsNavigationEnabled(
                 getBooleanValue(sharedPref, PREF_ENABLE_VOLUME_BUTTONS_NAVIGATION));
-
         configuration.setMultithreadedRenderingEnabled(getBooleanValue(sharedPref, PREF_MULTI_THREADED_RENDERING));
-
         return configuration;
     }
 
