@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~   Copyright © 2014-2024 PSPDFKit GmbH. All rights reserved.
+  ~
+  ~   The PSPDFKit Sample applications are licensed with a modified BSD license.
+  ~   Please see License for details. This notice may not be removed from this file.
+  -->
+
+<resources>
+    <string name="app_name">Instant</string>
+
+    <string name="error_enter_valid_server_url">Enter valid server url</string>
+    <string name="error_enter_valid_user_name">Enter valid user name</string>
+    <string name="error_connection_failed">Connection failed</string>
+    <string name="error_listing_documents">Documents list could not be refreshed.</string>
+    <string name="error_syncing_annotations">Annotations could not be synced. Check your connection and try again.</string>
+    <string name="error_syncing_annotations_authentication_failed">Annotations could not be synced. Authentication failed.</string>
+    <string name="progress_connecting">Connecting…</string>
+
+    <string name="error_old_client">An update for %s is required to access the document and sync annotations.</string>
+    <string name="error_old_server">An update for Instant Server (PSPDFKit Document Engine) is required to access the document and sync annotations.</string>
+
+    <string name="default_web_example_server_url">http://127.0.0.1:3000/</string>
+    <string name="default_username">test</string>
+
+    <string name="log_out">Logout</string>
+    <string name="log_out_confirmation">Do you really wish to logout?</string>
+
+    <string name="layers">Layers</string>
+    <string name="default_layer">Default Layer</string>
+</resources>
