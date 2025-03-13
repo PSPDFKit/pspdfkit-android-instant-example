@@ -25,7 +25,7 @@
         android:theme="@style/PSPDFCatalog.Theme.Light">
 
         <meta-data
-            android:name="pspdfkit_license_key"
+            android:name="nutrient_license_key"
             android:value="@string/NUTRIENT_LICENSE_KEY"/>
 
         <!--

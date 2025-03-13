@@ -12,7 +12,7 @@
         <item name="colorPrimaryDark">@color/dark_status_bar</item>
         <item name="colorAccent">@color/dark_accent</item>
         <item name="colorSecondary">@color/dark_secondary</item>
-        <item name="colorOnSecondary">@color/pspdf__color_black</item>
+        <item name="colorOnSecondary">@color/dark_background_color_secondary</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -60,14 +60,14 @@
     </style>
 
     <style name="PSPDFKit.ContentEditingStylingBar.Dark" parent="PSPDFKit.ContentEditingStylingBar">
-        <item name="pspdf__backgroundColor">@color/pspdf__color_black</item>
-        <item name="pspdf__borderColor">@color/pspdf__gray_70</item>
-        <item name="pspdf__fontButtonsTintColor">@color/pspdf__gray_80</item>
-        <item name="pspdf__fontSmallButtonsTintColor">@color/pspdf__gray_80</item>
-        <item name="pspdf__fontButtonsTintColorChecked">@color/pspdf__gray_70</item>
-        <item name="pspdf__textColor">@color/pspdf__gray_20</item>
-        <item name="pspdf__iconBorderColor">@color/pspdf__gray_20</item>
-        <item name="pspdf__iconsColor">@color/pspdf__gray_20</item>
+        <item name="pspdf__backgroundColor">@color/dark_background_color</item>
+        <item name="pspdf__borderColor">@color/gray_darker</item>
+        <item name="pspdf__fontButtonsTintColor">@color/gray_darker</item>
+        <item name="pspdf__fontSmallButtonsTintColor">@color/gray_darker</item>
+        <item name="pspdf__fontButtonsTintColorChecked">@color/gray_darker</item>
+        <item name="pspdf__textColor">@color/dark_accent</item>
+        <item name="pspdf__iconBorderColor">@color/dark_accent</item>
+        <item name="pspdf__iconsColor">@color/dark_accent</item>
     </style>
 
     <style name="PSPDFCatalog.PopupToolbar.Dark" parent="PSPDFKit.PopupToolbar.Dark">
@@ -172,7 +172,7 @@
 
     <style name="PSPDFCatalog.ThumbnailGrid.Dark" parent="PSPDFKit.ThumbnailGrid">
         <item name="pspdf__backgroundColor">@color/dark_status_bar</item>
-        <item name="pspdf__itemRippleBackgroundColor">@color/pspdf__color_signature_yellow</item>
+        <item name="pspdf__itemRippleBackgroundColor">@color/dark_theme_orange</item>
     </style>
 
     <style name="PSPDFCatalog.ToolbarCoordinator.Dark" parent="PSPDFKit.ToolbarCoordinatorLayout">
@@ -257,15 +257,15 @@
 
     <style name="PSPDFCatalog.ModalDialog.Dark" parent="PSPDFKit.ModalDialog">
         <item name="pspdf__titleBackground">?colorPrimaryDark</item>
-        <item name="pspdf__titleTextColor">@color/pspdf__gray_20</item>
-        <item name="pspdf__titleIconsColor">@color/pspdf__gray_20</item>
+        <item name="pspdf__titleTextColor">@color/dark_selection_background</item>
+        <item name="pspdf__titleIconsColor">@color/dark_selection_background</item>
     </style>
 
     <style name="PSPDFCatalog.SettingsDialog.Dark" parent="PSPDFKit.SettingsDialog.Dark">
-        <item name="colorPrimary">@color/pspdf__blue_darkmode</item>
-        <item name="colorAccent">@color/pspdf__blue_darkmode</item>
-        <item name="android:colorBackground">@color/pspdf__color_black</item>
-        <item name="pspdf__settings_unselected_color">@color/pspdf__gray_70</item>
+        <item name="colorPrimary">?colorPrimaryDark</item>
+        <item name="colorAccent">?colorPrimaryDark</item>
+        <item name="android:colorBackground">@color/dark_background_color</item>
+        <item name="pspdf__settings_unselected_color">@color/gray_darker</item>
     </style>
 
     <style name="PSPDFCatalog.FormSelection.Dark" parent="PSPDFKit.FormSelection">
@@ -284,6 +284,6 @@
     </style>
 
     <style name="PSPDFCatalog.MeasurementTools.Dark" parent="PSPDFKit.MeasurementTools">
-        <item name="pspdf__measurementValuePopupBackgroundColor">#FF0202</item>
+        <item name="pspdf__measurementValuePopupBackgroundColor">@color/error</item>
     </style>
 </resources>

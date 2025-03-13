@@ -31,7 +31,7 @@
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_primary_dark</item>
         <item name="colorSecondary">@color/color_secondary_dark</item>
-        <item name="colorOnSecondary">@color/pspdf__color_white</item>
+        <item name="colorOnSecondary">@color/color_primary</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -81,7 +81,7 @@
 
     <style name="PSPDFCatalog.Theme.MainToolbarStyle">
         <item name="pspdf__backgroundColor">?colorPrimary</item>
-        <item name="pspdf__textColor">@color/pspdf__color_white</item>
+        <item name="pspdf__textColor">?colorOnPrimary</item>
 
         <item name="pspdf__toolbarTheme">@style/ThemeOverlay.AppCompat.ActionBar</item>
         <item name="pspdf__toolbarPopupTheme">@style/PSPDFCatalog.Theme.ToolbarPopupTheme</item>
