@@ -21,8 +21,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
+import com.pspdfkit.document.PdfDocument;
+import com.pspdfkit.instant.client.InstantDocumentDescriptor;
 import com.pspdfkit.instant.document.InstantPdfDocument;
 import com.pspdfkit.instant.example.R;
+import com.pspdfkit.instant.example.aia.AiAssistantInstantHelper;
 import com.pspdfkit.instant.example.api.WebExampleClient;
 import com.pspdfkit.instant.example.api.WebExampleDocumentDescriptor;
 import com.pspdfkit.instant.example.api.WebExampleDocumentLayerDescriptor;
@@ -36,6 +39,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /** Activity with Instant sync progress indicator. */
 public class InstantExampleActivity extends InstantPdfActivity {
+
+    private String sessionId = "my-test-session-id-11";
 
     public static final String PARAM_DOCUMENT_DESCRIPTOR = "InstantExampleActivity.DocumentDescriptor";
 
@@ -72,6 +77,16 @@ public class InstantExampleActivity extends InstantPdfActivity {
                 com.pspdfkit.R.styleable.pspdf__ActionBarIcons_pspdf__iconsColor,
                 ContextCompat.getColor(this, R.color.white));
         a.recycle();
+    }
+
+    @Override
+    public void onDocumentLoaded(@NonNull PdfDocument document) {
+        super.onDocumentLoaded(document);
+        final InstantDocumentDescriptor instantDocumentDescriptor =
+                getDocument().getInstantDocumentDescriptor();
+        final String instantId = instantDocumentDescriptor.getDocumentId();
+        document.setAiAssistant(
+                new AiAssistantInstantHelper().createAiAssistant(this, "192.168.1.221", sessionId, instantId));
     }
 
     @Override

@@ -18,8 +18,8 @@ android {
         minSdk = 26
         targetSdk = compileSdk
 
-        versionName = "10.2.0"
-        versionCode = 142527
+        versionName = "10.3.0"
+        versionCode = 142923
 
         resValue("string", "NUTRIENT_LICENSE_KEY", "\"LICENSE_KEY_GOES_HERE\"")
     }
@@ -39,7 +39,7 @@ android {
 dependencies {
     // Nutrient is integrated from the Nutrient Maven repository. See the `repositories` block at the beginning
     // of this file, which shows how to set up the repository in your app.
-    implementation("io.nutrient:nutrient:10.2.0")
+    implementation("io.nutrient:nutrient:10.3.0")
 
     // Retrofit and Gson for web example REST API.
     implementation("com.google.code.gson:gson:2.10.1")
@@ -47,4 +47,10 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // Json Web Tokens
+    implementation("io.github.nefilim.kjwt:kjwt-core:0.9.0")
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 }

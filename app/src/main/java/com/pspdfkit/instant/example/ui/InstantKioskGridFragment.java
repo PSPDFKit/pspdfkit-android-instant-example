@@ -212,7 +212,7 @@ public class InstantKioskGridFragment extends Fragment {
 
     @NonNull
     protected PdfActivityConfiguration.Builder getConfiguration() {
-        return InstantCatalogPreferencesFragment.getConfiguration(getContext());
+        return InstantCatalogPreferencesFragment.getConfiguration(getContext()).setAiAssistantEnabled(true);
     }
 
     @NonNull
