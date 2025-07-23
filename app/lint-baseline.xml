@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<issues format="6" by="lint 8.6.0" type="baseline" client="gradle" dependencies="false" name="AGP (8.6.0)" variant="all" version="8.6.0">
+<issues format="6" by="lint 8.10.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.10.1)" variant="all" version="8.10.1">
 
     <issue
         id="InconsistentLayout"
@@ -23,270 +23,6 @@
             line="42"
             column="9"
             message="Occurrence in layout"/>
-    </issue>
-
-    <issue
-        id="UnusedAttribute"
-        message="Attribute `resizeableActivity` is only used in API level 24 and higher (current min is 21)"
-        errorLine1="            android:resizeableActivity=&quot;true&quot;>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/AndroidManifest.xml"
-            line="37"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="UnusedAttribute"
-        message="Attribute `resizeableActivity` is only used in API level 24 and higher (current min is 21)"
-        errorLine1="            android:resizeableActivity=&quot;true&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/AndroidManifest.xml"
-            line="50"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="UnusedAttribute"
-        message="Attribute `resizeableActivity` is only used in API level 24 and higher (current min is 21)"
-        errorLine1="            android:resizeableActivity=&quot;true&quot;"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/AndroidManifest.xml"
-            line="55"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;colorOnSecondary&quot;>@color/pspdf__color_black&lt;/item>"
-        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="15"
-            column="39"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__backgroundColor&quot;>@color/pspdf__color_black&lt;/item>"
-        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="63"
-            column="45"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__borderColor&quot;>@color/pspdf__gray_70&lt;/item>"
-        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="64"
-            column="41"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_80` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__fontButtonsTintColor&quot;>@color/pspdf__gray_80&lt;/item>"
-        errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="65"
-            column="50"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_80` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__fontSmallButtonsTintColor&quot;>@color/pspdf__gray_80&lt;/item>"
-        errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="66"
-            column="55"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__fontButtonsTintColorChecked&quot;>@color/pspdf__gray_70&lt;/item>"
-        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="67"
-            column="57"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__textColor&quot;>@color/pspdf__gray_20&lt;/item>"
-        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="68"
-            column="39"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__iconBorderColor&quot;>@color/pspdf__gray_20&lt;/item>"
-        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="69"
-            column="45"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__iconsColor&quot;>@color/pspdf__gray_20&lt;/item>"
-        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="70"
-            column="40"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_signature_yellow` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__itemRippleBackgroundColor&quot;>@color/pspdf__color_signature_yellow&lt;/item>"
-        errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="175"
-            column="55"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__titleTextColor&quot;>@color/pspdf__gray_20&lt;/item>"
-        errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="260"
-            column="44"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_20` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__titleIconsColor&quot;>@color/pspdf__gray_20&lt;/item>"
-        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="261"
-            column="45"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__blue_darkmode` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;colorPrimary&quot;>@color/pspdf__blue_darkmode&lt;/item>"
-        errorLine2="                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="265"
-            column="35"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__blue_darkmode` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;colorAccent&quot;>@color/pspdf__blue_darkmode&lt;/item>"
-        errorLine2="                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="266"
-            column="34"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;android:colorBackground&quot;>@color/pspdf__color_black&lt;/item>"
-        errorLine2="                                             ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="267"
-            column="46"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__settings_unselected_color&quot;>@color/pspdf__gray_70&lt;/item>"
-        errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/dark_theme.xml"
-            line="268"
-            column="55"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="    &lt;item android:color=&quot;@color/pspdf__color_black&quot; android:state_activated=&quot;true&quot; android:state_enabled=&quot;false&quot; />"
-        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/color/pspdf__dark_catalog_theme_settings_tint.xml"
-            line="9"
-            column="26"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__gray_70` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="    &lt;item android:color=&quot;@color/pspdf__gray_70&quot; android:state_activated=&quot;false&quot; android:state_enabled=&quot;false&quot; />"
-        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/color/pspdf__dark_catalog_theme_settings_tint.xml"
-            line="10"
-            column="26"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_black` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="    &lt;item android:color=&quot;@color/pspdf__color_black&quot; android:state_activated=&quot;true&quot; />"
-        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/color/pspdf__dark_catalog_theme_settings_tint.xml"
-            line="11"
-            column="26"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_white` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;colorOnSecondary&quot;>@color/pspdf__color_white&lt;/item>"
-        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/styles.xml"
-            line="36"
-            column="39"/>
-    </issue>
-
-    <issue
-        id="PrivateResource"
-        message="The resource `@color/pspdf__color_white` is marked as private in android:sdk-nutrient:unspecified"
-        errorLine1="        &lt;item name=&quot;pspdf__textColor&quot;>@color/pspdf__color_white&lt;/item>"
-        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values/styles.xml"
-            line="86"
-            column="39"/>
     </issue>
 
     <issue
@@ -342,13 +78,6 @@
             file="src/main/res/layout/activity_main_catalog.xml"
             line="8"
             column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        message="The resource `R.drawable.bg_splash_logo` appears to be unused">
-        <location
-            file="src/main/res/drawable-hdpi/bg_splash_logo.png"/>
     </issue>
 
     <issue
@@ -1299,46 +1028,6 @@
 
     <issue
         id="UnusedResources"
-        message="The resource `R.drawable.ic_launcher` appears to be unused"
-        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
-        errorLine2="^">
-        <location
-            file="src/main/res/drawable-v26/ic_launcher.xml"
-            line="9"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        message="The resource `R.drawable.ic_launcher_bg` appears to be unused"
-        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^">
-        <location
-            file="src/main/res/drawable-v26/ic_launcher_bg.xml"
-            line="8"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        message="The resource `R.drawable.ic_launcher_fg` appears to be unused"
-        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^">
-        <location
-            file="src/main/res/drawable-v26/ic_launcher_fg.xml"
-            line="8"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        message="The resource `R.drawable.ic_splash_logo` appears to be unused">
-        <location
-            file="src/main/res/drawable-hdpi/ic_splash_logo.png"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
         message="The resource `R.layout.item_example` appears to be unused"
         errorLine1="&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
         errorLine2="^">
@@ -1356,17 +1045,6 @@
         <location
             file="src/main/res/layout/item_section.xml"
             line="7"
-            column="1"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        message="The resource `R.drawable.launch_screen` appears to be unused"
-        errorLine1="&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
-        errorLine2="^">
-        <location
-            file="src/main/res/drawable/launch_screen.xml"
-            line="8"
             column="1"/>
     </issue>
 
@@ -1443,7 +1121,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="25"
+            line="23"
             column="12"/>
     </issue>
 
@@ -1454,7 +1132,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="105"
+            line="103"
             column="12"/>
     </issue>
 
@@ -1465,7 +1143,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="109"
+            line="107"
             column="12"/>
     </issue>
 
@@ -1476,7 +1154,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="116"
+            line="114"
             column="12"/>
     </issue>
 
@@ -1487,7 +1165,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="123"
+            line="121"
             column="12"/>
     </issue>
 
@@ -1498,7 +1176,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="125"
+            line="123"
             column="12"/>
     </issue>
 
@@ -1509,7 +1187,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="129"
+            line="127"
             column="12"/>
     </issue>
 
@@ -1520,7 +1198,7 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/styles.xml"
-            line="133"
+            line="131"
             column="12"/>
     </issue>
 
@@ -1547,17 +1225,6 @@
     </issue>
 
     <issue
-        id="MonochromeLauncherIcon"
-        message="The application adaptive icon is missing a monochrome tag"
-        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
-        errorLine2="^">
-        <location
-            file="src/main/res/drawable-v26/ic_launcher.xml"
-            line="9"
-            column="1"/>
-    </issue>
-
-    <issue
         id="IconDipSize"
         message="The image `document.png` varies significantly in its density-independent (dip) size across the various density versions: drawable-hdpi/document.png: 72x98 dp (108x147 px), drawable-mdpi/document.png: 72x98 dp (72x98 px), drawable-xhdpi/document.png: 72x98 dp (144x196 px), drawable-xxhdpi/document.png: 96x131 dp (288x392 px)">
         <location
@@ -1577,7 +1244,7 @@
         errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/java/com/pspdfkit/instant/example/ui/InstantExampleActivity.java"
-            line="84"
+            line="99"
             column="49"/>
     </issue>
 
@@ -1588,7 +1255,7 @@
         errorLine2="                                                    ~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/java/com/pspdfkit/instant/example/ui/InstantExampleActivity.java"
-            line="98"
+            line="113"
             column="53"/>
     </issue>
 
