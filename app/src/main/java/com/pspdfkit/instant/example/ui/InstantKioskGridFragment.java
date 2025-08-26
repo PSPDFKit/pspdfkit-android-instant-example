@@ -41,6 +41,7 @@ import io.reactivex.rxjava3.core.SingleSource;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -64,6 +65,7 @@ public class InstantKioskGridFragment extends Fragment {
     private WebExampleDocumentsDatabase webExampleDatabase;
 
     private DocumentAdapter documentAdapter;
+    private final ArrayList<WebExampleDocumentDescriptor> allDocumentDescriptors = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -101,9 +103,10 @@ public class InstantKioskGridFragment extends Fragment {
                     .build();
 
             intent.putExtra(InstantExampleActivity.PARAM_DOCUMENT_DESCRIPTOR, documentDescriptor);
+            intent.putParcelableArrayListExtra(
+                    InstantExampleActivity.PARAM_ALL_DOCUMENT_DESCRIPTORS, allDocumentDescriptors);
 
             startActivity(intent);
-
             // Remove document preview image from preview image cache.
             documentAdapter.removePreviewFromCache(documentDescriptor.getDefaultLayer());
         });
@@ -201,13 +204,22 @@ public class InstantKioskGridFragment extends Fragment {
                             progressBar.setVisibility(View.GONE);
                             swipeRefreshLayout.setRefreshing(false);
                         })
-                        .subscribe(documentAdapter::setDocuments, throwable -> {
-                            Log.e(TAG, "Error while trying to list all instant documents.", throwable);
-                            if (showError) {
-                                Toast.makeText(getContext(), R.string.error_listing_documents, Toast.LENGTH_LONG)
-                                        .show();
-                            }
-                        }));
+                        .subscribe(
+                                (newDocuments -> {
+                                    documentAdapter.setDocuments(newDocuments);
+                                    allDocumentDescriptors.clear();
+                                    allDocumentDescriptors.addAll(newDocuments);
+                                }),
+                                throwable -> {
+                                    Log.e(TAG, "Error while trying to list all instant documents.", throwable);
+                                    if (showError) {
+                                        Toast.makeText(
+                                                        getContext(),
+                                                        R.string.error_listing_documents,
+                                                        Toast.LENGTH_LONG)
+                                                .show();
+                                    }
+                                }));
     }
 
     @NonNull

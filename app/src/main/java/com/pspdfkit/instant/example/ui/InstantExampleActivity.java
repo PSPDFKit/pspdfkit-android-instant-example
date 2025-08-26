@@ -7,7 +7,10 @@
 
 package com.pspdfkit.instant.example.ui;
 
+import static com.pspdfkit.instant.example.aia.AiAssistantInstantHelper.createAiAssistantForInstant;
+
 import android.content.res.TypedArray;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,32 +24,39 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
-import com.pspdfkit.document.PdfDocument;
-import com.pspdfkit.instant.client.InstantDocumentDescriptor;
 import com.pspdfkit.instant.document.InstantPdfDocument;
 import com.pspdfkit.instant.example.R;
-import com.pspdfkit.instant.example.aia.AiAssistantInstantHelper;
 import com.pspdfkit.instant.example.api.WebExampleClient;
 import com.pspdfkit.instant.example.api.WebExampleDocumentDescriptor;
 import com.pspdfkit.instant.example.api.WebExampleDocumentLayerDescriptor;
 import com.pspdfkit.instant.example.preferences.InstantConnectionPreferences;
+import com.pspdfkit.instant.example.utils.JwtGenerator;
 import com.pspdfkit.instant.exceptions.InstantErrorCode;
 import com.pspdfkit.instant.exceptions.InstantException;
 import com.pspdfkit.instant.ui.InstantPdfActivity;
+import io.nutrient.domain.ai.AiAssistant;
+import io.nutrient.domain.ai.AiAssistantProvider;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.observers.DisposableCompletableObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 
 /** Activity with Instant sync progress indicator. */
-public class InstantExampleActivity extends InstantPdfActivity {
+public class InstantExampleActivity extends InstantPdfActivity implements AiAssistantProvider {
 
-    private String sessionId = "my-test-session-id-11";
+    private final String sessionId = "my-test-session-id-11";
 
     public static final String PARAM_DOCUMENT_DESCRIPTOR = "InstantExampleActivity.DocumentDescriptor";
+    public static final String PARAM_ALL_DOCUMENT_DESCRIPTORS = "InstantExampleActivity.AllDocumentDescriptors";
 
     private WebExampleClient webExampleClient;
     private String webExampleServerUrl;
-    private WebExampleDocumentDescriptor documentDescriptor;
+    private WebExampleDocumentDescriptor currentDocumentDescriptor;
+    private ArrayList<WebExampleDocumentDescriptor> allDocsDescriptors;
 
     /** True when annotation sync or authentication previously failed with an error. */
     private boolean isError;
@@ -62,10 +72,12 @@ public class InstantExampleActivity extends InstantPdfActivity {
         getPdfFragment().addInstantDocumentListener(this);
 
         webExampleServerUrl = InstantConnectionPreferences.getInstantServerUrl(this);
+
         webExampleClient = new WebExampleClient(
                 InstantConnectionPreferences.getWebExampleServerUrl(this),
                 InstantConnectionPreferences.getUserName(this));
-        documentDescriptor = getIntent().getParcelableExtra(PARAM_DOCUMENT_DESCRIPTOR);
+        currentDocumentDescriptor = getIntent().getParcelableExtra(PARAM_DOCUMENT_DESCRIPTOR);
+        allDocsDescriptors = getIntent().getParcelableArrayListExtra(PARAM_ALL_DOCUMENT_DESCRIPTORS);
 
         final TypedArray a = getTheme()
                 .obtainStyledAttributes(
@@ -80,20 +92,10 @@ public class InstantExampleActivity extends InstantPdfActivity {
     }
 
     @Override
-    public void onDocumentLoaded(@NonNull PdfDocument document) {
-        super.onDocumentLoaded(document);
-        final InstantDocumentDescriptor instantDocumentDescriptor =
-                getDocument().getInstantDocumentDescriptor();
-        final String instantId = instantDocumentDescriptor.getDocumentId();
-        document.setAiAssistant(
-                new AiAssistantInstantHelper().createAiAssistant(this, "192.168.1.221", sessionId, instantId));
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(@NonNull final Menu menu) {
         super.onCreateOptionsMenu(menu);
 
-        if (documentDescriptor == null) return true;
+        if (currentDocumentDescriptor == null) return true;
 
         final MenuItem layersMenuItem = menu.add(0, R.id.layers_button, 0, getString(R.string.layers));
         layersMenuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
@@ -105,7 +107,7 @@ public class InstantExampleActivity extends InstantPdfActivity {
     public boolean onPrepareOptionsMenu(@NonNull final Menu menu) {
         super.onPrepareOptionsMenu(menu);
 
-        if (documentDescriptor == null) return true;
+        if (currentDocumentDescriptor == null) return true;
 
         MenuItem layersMenuItem = menu.findItem(R.id.layers_button);
         if (layersMenuItem == null) {
@@ -126,14 +128,14 @@ public class InstantExampleActivity extends InstantPdfActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull final MenuItem item) {
         if (item.getItemId() == R.id.layers_button) {
-            if (documentDescriptor == null) return true;
+            if (currentDocumentDescriptor == null) return true;
 
             final View menuItemView = findViewById(R.id.layers_button);
             final PopupMenu popupMenu = new PopupMenu(this, menuItemView);
 
             final String currentLayerName = getCurrentLayerName();
 
-            for (final WebExampleDocumentLayerDescriptor layer : documentDescriptor.layers) {
+            for (final WebExampleDocumentLayerDescriptor layer : currentDocumentDescriptor.layers) {
                 final MenuItem menuItem;
                 if (TextUtils.isEmpty(layer.layerName)) {
                     menuItem = popupMenu.getMenu().add(R.string.default_layer);
@@ -160,6 +162,7 @@ public class InstantExampleActivity extends InstantPdfActivity {
     @Nullable
     private String getCurrentLayerName() {
         final InstantPdfDocument document = getDocument();
+
         if (document == null) return null;
         return document.getInstantDocumentDescriptor().getLayerName();
     }
@@ -293,5 +296,26 @@ public class InstantExampleActivity extends InstantPdfActivity {
                             Toast.LENGTH_LONG)
                     .show();
         }
+    }
+
+    @NonNull
+    @Override
+    public AiAssistant getAiAssistant() {
+        return createAiAssistantForInstant(
+                this, webExampleServerUrl, allDocsDescriptors, "192.168.1.221", sessionId, (instantDocumentIds) -> {
+                    Map<String, Object> claims = new HashMap<>();
+                    claims.put("document_ids", instantDocumentIds);
+                    claims.put("session_ids", List.of(sessionId));
+                    Map<String, Integer> requestLimit = new HashMap<>();
+                    requestLimit.put("requests", 160);
+                    requestLimit.put("time_period_s", 1000 * 60);
+                    claims.put("request_limit", requestLimit);
+                    return new JwtGenerator(this).generateJwtToken(claims, "keys/jwt.pem");
+                });
+    }
+
+    @Override
+    public void navigateTo(@NotNull List<? extends @NotNull RectF> documentRect, int pageIndex, int documentIndex) {
+        getPdfFragment().highlight(this, new ArrayList(documentRect), pageIndex);
     }
 }

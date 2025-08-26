@@ -179,7 +179,6 @@ public class CatalogPreferencesFragment extends PreferenceFragmentCompat
         }
 
         configuration.searchEnabled(getBooleanValue(sharedPref, PREF_SHOW_SEARCH_ACTION));
-        configuration.useImmersiveMode(getBooleanValue(sharedPref, PREF_IMMERSIVE_MODE));
         configuration.thumbnailGridEnabled(getBooleanValue(sharedPref, PREF_SHOW_THUMBNAIL_GRID_ACTION));
         configuration.outlineEnabled(getBooleanValue(sharedPref, PREF_SHOW_OUTLINE_ACTION));
         configuration.annotationListEnabled(getBooleanValue(sharedPref, PREF_SHOW_ANNOTATION_LIST_ACTION));
