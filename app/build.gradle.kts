@@ -19,7 +19,7 @@ android {
         targetSdk = compileSdk
 
         versionName = "10.9.0"
-        versionCode = 145049
+        versionCode = 145300
 
         resValue("string", "NUTRIENT_LICENSE_KEY", "\"LICENSE_KEY_GOES_HERE\"")
     }

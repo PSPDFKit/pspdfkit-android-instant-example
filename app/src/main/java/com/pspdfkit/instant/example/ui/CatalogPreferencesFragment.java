@@ -40,6 +40,7 @@ import com.pspdfkit.instant.example.BuildConfig;
 import com.pspdfkit.instant.example.R;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
+import java.util.EnumSet;
 import java.util.Objects;
 
 /**
@@ -190,9 +191,9 @@ public class CatalogPreferencesFragment extends PreferenceFragmentCompat
         configuration.annotationRotationEnabled(getBooleanValue(sharedPref, PREF_ENABLE_ANNOTATION_ROTATION));
         configuration.formEditingEnabled(getBooleanValue(sharedPref, PREF_ENABLE_FORM_EDITING));
         if (getBooleanValue(sharedPref, PREF_SHOW_SHARE_ACTION)) {
-            configuration.setEnabledShareFeatures(ShareFeatures.all());
+            configuration.setEnabledShareFeatures(EnumSet.allOf(ShareFeatures.class));
         } else {
-            configuration.setEnabledShareFeatures(ShareFeatures.none());
+            configuration.setEnabledShareFeatures(EnumSet.noneOf(ShareFeatures.class));
         }
         configuration.printingEnabled(getBooleanValue(sharedPref, PREF_SHOW_PRINT_ACTION));
         configuration.textSelectionEnabled(getBooleanValue(sharedPref, PREF_ENABLE_TEXT_SELECTION));
