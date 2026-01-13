@@ -7,7 +7,7 @@
 
 package com.pspdfkit.instant.example.ui;
 
-import static com.pspdfkit.instant.example.aia.AiAssistantInstantHelper.createAiAssistantForInstant;
+import static com.pspdfkit.ai.AiAssistantHelpersKt.createAiAssistantForInstant;
 
 import android.content.res.TypedArray;
 import android.graphics.RectF;
@@ -57,6 +57,7 @@ public class InstantExampleActivity extends InstantPdfActivity implements AiAssi
     private String webExampleServerUrl;
     private WebExampleDocumentDescriptor currentDocumentDescriptor;
     private ArrayList<WebExampleDocumentDescriptor> allDocsDescriptors;
+    private AiAssistant aiAssistant;
 
     /** True when annotation sync or authentication previously failed with an error. */
     private boolean isError;
@@ -89,6 +90,8 @@ public class InstantExampleActivity extends InstantPdfActivity implements AiAssi
                 com.pspdfkit.R.styleable.pspdf__ActionBarIcons_pspdf__iconsColor,
                 ContextCompat.getColor(this, R.color.white));
         a.recycle();
+
+        aiAssistant = createAiAssistantInstance();
     }
 
     @Override
@@ -301,8 +304,25 @@ public class InstantExampleActivity extends InstantPdfActivity implements AiAssi
     @NonNull
     @Override
     public AiAssistant getAiAssistant() {
+        return aiAssistant;
+    }
+
+    public AiAssistant createAiAssistantInstance() {
+        // Extract JWT tokens from document descriptors
+        List<String> documentLayerJwts = new ArrayList<>();
+        if (allDocsDescriptors != null) {
+            for (WebExampleDocumentDescriptor descriptor : allDocsDescriptors) {
+                documentLayerJwts.add(descriptor.getDefaultLayer().jwt);
+            }
+        }
+
         return createAiAssistantForInstant(
-                this, webExampleServerUrl, allDocsDescriptors, "192.168.1.221", sessionId, (instantDocumentIds) -> {
+                this,
+                webExampleServerUrl,
+                documentLayerJwts,
+                "http://192.168.1.221:4000",
+                sessionId,
+                (instantDocumentIds) -> {
                     Map<String, Object> claims = new HashMap<>();
                     claims.put("document_ids", instantDocumentIds);
                     claims.put("session_ids", List.of(sessionId));
